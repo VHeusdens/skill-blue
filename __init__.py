@@ -17,6 +17,8 @@ LOGGER = getLogger(__name__)
 # Each skill is contained within its own class, which inherits base methods
 # from the MycroftSkill class.  You extend this class as shown below.
 
+jfdksla;jgbrkl;abjrwoia
+
 class BlueSkill(MycroftSkill):
 
     # The constructor of the skill, which calls MycroftSkill's constructor

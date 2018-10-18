@@ -4,7 +4,7 @@
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.util.log import getLogger
-from time import sleep
+from mycroft.audio import wait_while_speaking
 
 __author__ = 'Vianne'
 LOGGER = getLogger(__name__)
@@ -23,8 +23,8 @@ class BlueSkill(MycroftSkill):
         print("Initial eye color: {}".format(self.settings["current_eye_color"]))
         self.enclosure.eyes_color(0, 0, 255)
         # self.settings["current_eye_color"] = [0, 0, 255]
-        self.speak_dialog("blue")
-        sleep(4)
+        self.speak_dialog("blue" ,data={"name": "Mathias"})
+
 
         self.enclosure.eyes_color(*self.settings["current_eye_color"])
 

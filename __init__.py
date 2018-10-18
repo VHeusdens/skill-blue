@@ -26,7 +26,7 @@ class BlueSkill(MycroftSkill):
         self.enclosure.eyes_color(0, 0, 255)
         # self.settings["current_eye_color"] = [0, 0, 255]
         res = requests.get("http://api.icndb.com/jokes/random")
-        joke = res.json()['value']['joke'].resplace('Chuck Norris', 'Mathias Mul')
+        joke = res.json()['value']['joke'].replace('Chuck Norris', 'Mathias Mul')
         self.speak_dialog("blue", data={"joke": joke})
 
 

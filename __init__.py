@@ -9,7 +9,7 @@
 
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill, intent_handler
-from mycroft.util.log import LOG
+from mycroft.util.log import getLogger
 
 __author__ = 'Vianne'
 LOGGER = getLogger(__name__)
@@ -17,8 +17,6 @@ LOGGER = getLogger(__name__)
 # Each skill is contained within its own class, which inherits base methods
 # from the MycroftSkill class.  You extend this class as shown below.
 
-jfdksla;jgbrkl;abjrwoia
-ges
 class BlueSkill(MycroftSkill):
 
     # The constructor of the skill, which calls MycroftSkill's constructor

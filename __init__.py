@@ -6,6 +6,8 @@ from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.util.log import getLogger
 from mycroft.audio import wait_while_speaking
 
+import requests
+
 __author__ = 'Vianne'
 LOGGER = getLogger(__name__)
 
@@ -23,7 +25,10 @@ class BlueSkill(MycroftSkill):
         print("Initial eye color: {}".format(self.settings["current_eye_color"]))
         self.enclosure.eyes_color(0, 0, 255)
         # self.settings["current_eye_color"] = [0, 0, 255]
-        self.speak_dialog("blue" ,data={"name": "Mathias"})
+        res = requests.get("http://api.icndb.com/jokes/random")
+        joke = res.json()['value']['joke'].resplace('Chuck Norris', 'Mathias Mul')
+        self.speak_dialog("blue", data={"joke": joke})
+
 
 
         self.enclosure.eyes_color(*self.settings["current_eye_color"])

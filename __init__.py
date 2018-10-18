@@ -42,6 +42,8 @@ class BlueSkill(MycroftSkill):
         # In this case, respond by simply speaking a canned response.
         # Mycroft will randomly speak one of the lines from the file
         #    dialogs/en-us/hello.world.dialog
+        self.enclosure.eyes_color(0, 0, 255)
+        self.settings["current_eye_color"] = [0, 0, 255]
         self.speak_dialog("blue")
 
     def stop(self):

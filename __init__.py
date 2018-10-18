@@ -20,10 +20,12 @@ class BlueSkill(MycroftSkill):
 
     @intent_handler(IntentBuilder("BlueIntent").require("BlueKeyword"))
     def handle_blue_intent(self):
+        print("Initial eye color: {}".format(self.settings["current_eye_color"]))
         self.enclosure.eyes_color(0, 0, 255)
         # self.settings["current_eye_color"] = [0, 0, 255]
         self.speak_dialog("blue")
         sleep(4)
+
         self.enclosure.eyes_color(*self.settings["current_eye_color"])
 
     # def stop(self):
